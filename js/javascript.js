@@ -40,10 +40,44 @@
     }
   ];
 
-  $.ajax({
-    url: courses,
-    method: "GET"
-  }).then(function(response) {
-    console.log(courses);
-    console.log(response);
-  });
+ console.log(courses);
+ for (var i = 0; i < 9; i++) {
+
+  var eventDiv = $("<div class='eventDiv'>");
+  var imageURL = courses[i].imgURL;
+  var image = $("<img>");
+  image.attr("src", imageURL);
+  eventDiv.append(image);
+  $("#events-display").append(eventDiv);
+  var eventName = $("<div>");
+  eventName.html(courses[i].title);
+  eventName.attr("style","font-weight: bold;");
+  eventDiv.append(eventName);
+
+  $("#events-display").append(eventDiv);
+
+  var description = $("<div>");
+  description.html(courses[i].description);
+  eventDiv.append(description);
+
+  $("#events-display").append(eventDiv);
+
+  var level = $("<div>");
+  level.html("Level: "+courses[i].level);
+  level.attr("style","font-weight: bold;");
+  eventDiv.append(level);
+
+
+  $("#events-display").append(eventDiv);
+
+  var btn = $("<button>");
+  btn.addClass("event-btn");
+  var eventURL = courses[i].URL;
+  console.log(eventURL);
+  btn.attr("onClick", `window.open("${eventURL}")`);
+  btn.text("See more");
+  eventDiv.append(btn);
+
+  $("#events-display").append(eventDiv);
+
+}

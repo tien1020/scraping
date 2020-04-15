@@ -184,6 +184,7 @@ h5 {
     font-weight: bold;
   }
   
+  
 
   #linkedin {
     font-weight: bold;
@@ -192,6 +193,14 @@ h5 {
   .resume-btn {
     background-color: #f7797d;
     font-weight: bold;
+  }
+  .eventDiv img {
+    height: 200px;
+    width: 300px;
+  }
+  .imageDiv img {
+    height: 200px;
+    width: 300px;
   }
 
   @media screen and (max-width: 980px) {
